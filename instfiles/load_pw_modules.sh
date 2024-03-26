@@ -1,10 +1,19 @@
 #!/bin/sh
 
+if ! command -v pw-cli >/dev/null; then
+    echo "pw-cli not found, exiting"
+    exit 0
+fi
+
+if ! pw-cli quit 2>/dev/null; then
+    echo "pipewire server is not running, exiting"
+    exit 0
+fi
+
 status=0
 
 if [ -n "$XRDP_SESSION" -a -n "$XRDP_SOCKET_PATH" ]; then
-    # These values are not present on xrdp versions before v0.9.8
-
+    # Destroy xrdp sink and source if they already exist
     OBJECT_IDS=$(pw-cli ls Node | sed -e "s/^[^a-z]//" | grep -w "^id" | sed -e "s/^[^0-9]*//" -e "s/[^0-9]/-/" | cut -d- -f1)
     for OBJECT_ID in $OBJECT_IDS; do
         NODE_NAME=$(pw-cli info $OBJECT_ID | grep -w "node\.name" | cut -d\" -f2)
