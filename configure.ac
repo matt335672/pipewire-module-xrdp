@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.65])
-AC_INIT([pipewire-module-xrdp], [0.1], [xrdp-devel@googlegroups.com])
+AC_INIT([pipewire-module-xrdp], [0.2], [xrdp-devel@googlegroups.com])
 # specify config_ac.h for familiarity
 AC_CONFIG_HEADERS([config_ac.h])
 AC_CONFIG_SRCDIR([src])
