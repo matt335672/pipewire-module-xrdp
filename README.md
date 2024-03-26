@@ -8,7 +8,7 @@ Pipewire versions 0.3.58 and later are supported.
 
 # Files
 ## Sources
-- [src/module-xrdp-pipewire.c](src/module-xrdp-pipewire.c)
+- [src/module-xrdp.c](src/module-xrdp.c)
     The module source.
 - [src/pw-cli_0358_mod.c](src/pw-cli_0358_mod.c)
     pw-cli for older systems running pipewire 0.3.58

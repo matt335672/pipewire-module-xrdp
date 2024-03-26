@@ -5,13 +5,13 @@ if USE_ALT_PW_CLI
 pkglibexec_PROGRAMS = pw-cli_0358_mod
 endif
 
-modlibexec_LTLIBRARIES = libpipewire-module-xrdp-pipewire.la
+modlibexec_LTLIBRARIES = libpipewire-module-xrdp.la
 
 # _GNU_SOURCE needed for asprintf() declaration
 pw_cli_0358_mod_SOURCES = pw-cli_0358_mod.c
 pw_cli_0358_mod_CFLAGS =  $(PW_CFLAGS) $(SPA_CFLAGS) -D_GNU_SOURCE
 pw_cli_0358_mod_LDFLAGS = $(PW_LIBS)
 
-libpipewire_module_xrdp_pipewire_la_SOURCES = module-xrdp-pipewire.c
-libpipewire_module_xrdp_pipewire_la_CFLAGS = $(PW_CFLAGS) $(SPA_CFLAGS) -fPIC
-libpipewire_module_xrdp_pipewire_la_LDFLAGS = -module -avoid-version
+libpipewire_module_xrdp_la_SOURCES = module-xrdp.c
+libpipewire_module_xrdp_la_CFLAGS = $(PW_CFLAGS) $(SPA_CFLAGS) -fPIC
+libpipewire_module_xrdp_la_LDFLAGS = -module -avoid-version

@@ -14,7 +14,7 @@ if [ -n "$XRDP_SESSION" -a -n "$XRDP_SOCKET_PATH" ]; then
     done
 
     # Kill module, if it is working
-    #PID=$(ps -u $(id -u) -o pid,ruser,cmd | grep libpipewire-module-xrdp-pipewire | grep -v grep | sed -e 's/^ *//' | cut -d' ' -f1)
+    #PID=$(ps -u $(id -u) -o pid,ruser,cmd | grep libpipewire-module-xrdp | grep -v grep | sed -e 's/^ *//' | cut -d' ' -f1)
     #if [ -n "$PID" ]; then
     #    kill -HUP $PID
     #fi
@@ -44,11 +44,11 @@ if [ -n "$XRDP_SESSION" -a -n "$XRDP_SOCKET_PATH" ]; then
     QUANTUMVAL2=$(($QUANTUMVAL * 2))
 
     # enable both xrdp-sink ans xrdp-source
-    $PWCLI -m -d load-module libpipewire-module-xrdp-pipewire sink.node.latency=$QUANTUMVAL sink.stream.props={node.name=xrdp-sink} source.stream.props={node.name=xrdp-source} > /dev/null &
+    $PWCLI -m -d load-module libpipewire-module-xrdp sink.node.latency=$QUANTUMVAL sink.stream.props={node.name=xrdp-sink} source.stream.props={node.name=xrdp-source} > /dev/null &
     # enable xrdp-sink only
-    # $PWCLI -m -d load-module libpipewire-module-xrdp-pipewire sink.node.latency=$QUANTUMVAL sink.stream.props={node.name=xrdp-sink} > /dev/null &
+    # $PWCLI -m -d load-module libpipewire-module-xrdp sink.node.latency=$QUANTUMVAL sink.stream.props={node.name=xrdp-sink} > /dev/null &
     # enable xrdp-source only
-    # $PWCLI -m -d load-module libpipewire-module-xrdp-pipewire source.stream.props={node.name=xrdp-source} > /dev/null &
+    # $PWCLI -m -d load-module libpipewire-module-xrdp source.stream.props={node.name=xrdp-source} > /dev/null &
 
     sleep 1
 

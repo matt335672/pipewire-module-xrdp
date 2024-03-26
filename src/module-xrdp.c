@@ -132,7 +132,7 @@
  *\endcode
  */
 
-#define NAME "xrdp-pipewire"
+#define NAME "xrdp"
 
 #define DEFAULT_FORMAT "S16"
 #define DEFAULT_RATE 44100
