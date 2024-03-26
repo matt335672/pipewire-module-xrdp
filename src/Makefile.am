@@ -14,4 +14,4 @@ pw_cli_0358_mod_LDFLAGS = $(PW_LIBS)
 
 libpipewire_module_xrdp_la_SOURCES = module-xrdp.c
 libpipewire_module_xrdp_la_CFLAGS = $(PW_CFLAGS) $(SPA_CFLAGS) -fPIC
-libpipewire_module_xrdp_la_LDFLAGS = -module -avoid-version
+libpipewire_module_xrdp_la_LDFLAGS = $(PW_LIBS) $(SPA_LIBS) -avoid-version
